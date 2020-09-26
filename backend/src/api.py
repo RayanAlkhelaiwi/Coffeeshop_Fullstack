@@ -51,7 +51,7 @@ def get_drinks():
         or appropriate status code indicating reason for failure
 '''
 
-@app.route('/drinks-detsil')
+@app.route('/drinks-detail')
 @requires_auth('get:drinks-detail')
 def get_drinks_detail(jwt):
 
