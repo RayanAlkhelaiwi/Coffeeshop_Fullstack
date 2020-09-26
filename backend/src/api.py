@@ -12,7 +12,7 @@ setup_db(app)
 CORS(app)
 
 '''
-@TODO uncomment the following line to initialize the datbase
+uncomment the following line to initialize the datbase
 !! NOTE THIS WILL DROP ALL RECORDS AND START YOUR DB FROM SCRATCH
 !! NOTE THIS MUST BE UNCOMMENTED ON FIRST RUN
 '''
@@ -20,7 +20,6 @@ CORS(app)
 
 ## ROUTES
 '''
-[Complete] implement endpoint
     GET /drinks
         it should be a public endpoint
         it should contain only the drink.short() data representation
@@ -43,7 +42,6 @@ def get_drinks():
     })
 
 '''
-[Complete] implement endpoint
     GET /drinks-detail
         it should require the 'get:drinks-detail' permission
         it should contain the drink.long() data representation
@@ -67,7 +65,6 @@ def get_drinks_detail(jwt):
     })
 
 '''
-[Complete] implement endpoint
     POST /drinks
         it should create a new row in the drinks table
         it should require the 'post:drinks' permission
@@ -96,7 +93,6 @@ def create_drink(jwt):
         return unprocessable(422)
 
 '''
-[Complete] implement endpoint
     PATCH /drinks/<id>
         where <id> is the existing model id
         it should respond with a 404 error if <id> is not found
@@ -134,7 +130,6 @@ def update_drink(jwt, id):
         return unprocessable(422)
 
 '''
-[Complete] implement endpoint
     DELETE /drinks/<id>
         where <id> is the existing model id
         it should respond with a 404 error if <id> is not found
@@ -164,7 +159,6 @@ def delete_drink(jwt, id):
         return unprocessable(422)
 
 # Error Handling
-
 '''
     Error handler for unprocessable entity, 422
 '''
