@@ -53,7 +53,7 @@ def get_drinks():
 
 @app.route('/drinks-detsil')
 @requires_auth('get:drinks-detail')
-def get_drinks_detail():
+def get_drinks_detail(jwt):
 
     drinks = Drink.query.all()
     long_form_drinks = [drink.long() for drink in drinks]
@@ -78,8 +78,8 @@ def get_drinks_detail():
 
 @app.route('/drinks', methods=['POST'])
 @requires_auth('post:drinks')
-def create_drink():
-    body - request.get_json()
+def create_drink(jwt):
+    body = request.get_json()
 
     new_title = body.get('title', None)
     new_recipe = body.get('recipe', None)
