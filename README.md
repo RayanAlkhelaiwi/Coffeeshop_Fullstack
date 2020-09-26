@@ -5,6 +5,11 @@
 
 A backend RESTful API built-in Flask, with an Ionic frontend, that provides a variety of drinks to order from, with the ability to create new drinks, if permitted (Using Auth0/RBAC)
 
+
+Permitted User UI  |  Drink Creation Window
+:-------------------------:|:-------------------------:
+![Permitted-User-UI](assets/permittedUser.png)  |  ![Drink-Creation-Window](assets/drinkCreation.png)
+
 The backend code follows [PEP-8 style guidelines](https://www.python.org/dev/peps/pep-0008/).
 
 ### Getting Started
@@ -43,14 +48,10 @@ Errors are returned as JSON obejcts in the following format:
 }
 ```
 
-Permitted User UI  |  Drink Creation Window
-:-------------------------:|:-------------------------:
-![Permitted-User-UI](assets/permittedUser.png)  |  ![Drink-Creation-Window](assets/drinkCreation.png) 
-
 The Error types the API returns when requests fail are:
 | HTTP Status Code | Response |
 | ----------- | ----------- |
-| 400 | Bad Request |
+| 401 | Client Error |
 | 404 | Not Found |
-| 405 | Method Not Allowed |
 | 422 | Unprocessable Entity |
+| AuthError | Authentication Error |
