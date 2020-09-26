@@ -1,7 +1,5 @@
 # Coffee Shop Backend
 
-# https://review.udacity.com/#!/rubrics/2593/view
-
 ## Getting Started
 
 ### Installing Dependencies
