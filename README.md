@@ -3,7 +3,7 @@
 [![made-with-ionic](https://img.shields.io/badge/Frontend-Ionic-06B3E1.svg)](https://ionicframework.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-Green.svg)](https://opensource.org/licenses/MIT)
 
-A backend RESTful API built-in Flask, with an Ionic frontend, that provides a variety of drinks to order from, with the ability to create new drinks, if permitted (With Auth0 and RBAC)
+A backend RESTful API built-in Flask, with an Ionic frontend, that provides a variety of drinks to order from, with the ability to create new drinks, if permitted (Using Auth0/RBAC)
 
 The backend code follows [PEP-8 style guidelines](https://www.python.org/dev/peps/pep-0008/).
 
