@@ -1,35 +1,56 @@
-# Coffee Shop Full Stack
+# Coffeeshop Full Stack - Ionic/Flask
+[![made-with-python](https://img.shields.io/badge/Backend-Python-1F425F.svg)](https://www.python.org/)
+[![made-with-ionic](https://img.shields.io/badge/Frontend-Ionic-06B3E1.svg)](https://ionicframework.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-Green.svg)](https://opensource.org/licenses/MIT)
 
-## Full Stack Nano - IAM Final Project
+A backend RESTful API built-in Flask, with an Ionic frontend, that provides a variety of drinks to order from, with the ability to create new drinks, if permitted (With Auth0 and RBAC)
 
-Udacity has decided to open a new digitally enabled cafe for students to order drinks, socialize, and study hard. But they need help setting up their menu experience.
+The backend code follows [PEP-8 style guidelines](https://www.python.org/dev/peps/pep-0008/).
 
-You have been called on to demonstrate your newly learned skills to create a full stack drink menu application. The application must:
+### Getting Started
+- Base URL: Currently this backend app can only be run locally. It's hosted by default at `127.0.0.1:5000` which is set as a proxy in the fronend configuration.
 
-1) Display graphics representing the ratios of ingredients in each drink.
-2) Allow public users to view drink names and graphics.
-3) Allow the shop baristas to see the recipe information.
-4) Allow the shop managers to create new drinks and edit existing drinks.
+- Authentication: It require an Auth0 authentication and authorization for getting detailed drinks and drinks creation & deletion.
 
-## Tasks
+From the backend folder run `pip install -r requirements.txt`. All required packages are included in the requirements file.
 
-There are `@TODO` comments throughout the project. We recommend tackling the sections in order. Start by reading the READMEs in:
+To run the application, run the following commands inside the backend folder:
 
-1. [`./backend/`](./backend/README.md)
-2. [`./frontend/`](./frontend/README.md)
+```
+export FLASK_APP=src/api.py
+export FLASK_ENV=development
+flask run --reload
+```
 
-## About the Stack
+**Frontend**
 
-We started the full stack application for you. It is desiged with some key functional areas:
+Inside the fontend folder, run the following commands to start the client:
 
-### Backend
+```
+ionic serve
+```
 
-The `./backend` directory contains a partially completed Flask server with a pre-written SQLAlchemy module to simplify your data needs. You will need to complete the required endpoints, configure, and integrate Auth0 for authentication.
+By default, the frontend will run on `localhost:8100`.
 
-[View the README.md within ./backend for more details.](./backend/README.md)
+### Error Handling
+Errors are returned as JSON obejcts in the following format:
 
-### Frontend
+```json
+{
+  "error": 404, 
+  "message": "Not Found", 
+  "success": false
+}
+```
 
-The `./frontend` directory contains a complete Ionic frontend to consume the data from the Flask server. You will only need to update the environment variables found within (./frontend/src/environment/environment.ts) to reflect the Auth0 configuration details set up for the backend app. 
+Permitted User UI  |  Drink Creation Window
+:-------------------------:|:-------------------------:
+![Permitted-User-UI](assets/permittedUser.png)  |  ![Drink-Creation-Window](assets/drinkCreation.png) 
 
-[View the README.md within ./frontend for more details.](./frontend/README.md)
+The Error types the API returns when requests fail are:
+| HTTP Status Code | Response |
+| ----------- | ----------- |
+| 400 | Bad Request |
+| 404 | Not Found |
+| 405 | Method Not Allowed |
+| 422 | Unprocessable Entity |
